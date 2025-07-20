@@ -29,8 +29,8 @@ namespace EShift_Business.Repository.Services
                             return new Customer
                             {
                                 CustomerId = Convert.ToInt32(reader["customer_id"]),
-                                FirstName = reader["first_name"].ToString(),
-                                LastName = reader["last_name"].ToString(),
+                                FirstName = reader["f_name"].ToString(),
+                                LastName = reader["l_name"].ToString(),
                                 Email = reader["email"].ToString(),
                                 ContactNo = reader["contact_no"].ToString(),
                                // Password = reader["password"].ToString()
@@ -56,7 +56,7 @@ namespace EShift_Business.Repository.Services
                     cmd.Parameters.AddWithValue("@Email", customer.Email);
                     cmd.Parameters.AddWithValue("@ContactNo", customer.ContactNo);
                     cmd.Parameters.AddWithValue("@RegistrationDate", customer.RegistrationDate);
-                    cmd.Parameters.AddWithValue("@UserId", customer.UserId); // Make sure this is set before calling
+                    cmd.Parameters.AddWithValue("@UserId", customer.UserId); 
 
                     cmd.ExecuteNonQuery();
                 }

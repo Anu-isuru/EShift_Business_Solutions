@@ -505,7 +505,7 @@ namespace EShift_Business.Forms
                 if (result)
                 {
                     MessageBox.Show("Job deleted successfully.");
-                    LoadJobHistory(); // refresh grid
+                    LoadJobHistory(); 
                 }
             }
             else
@@ -542,21 +542,16 @@ namespace EShift_Business.Forms
             // 1. Check if payment already exists for this job
             decimal existingTotalPaid = _paymentService.GetTotalPaymentAmount(currentJobId); // Use the correct job ID
 
-            if (existingTotalPaid >= total)
-            {
-                MessageBox.Show("You have already completed the payment for this job.");
-                return;
-            }
 
             // 2. Check if current payment + previous exceeds total
-            if (existingTotalPaid + PaidAmount > total)
+            if (existingTotalPaid  > total)
             {
                 MessageBox.Show("This payment exceeds the total required amount.");
                 return;
             }
 
             // 3. Optional: Force full payment only
-            if (paidAmount != total - existingTotalPaid)
+            if (paidAmount < total )
             {
                 MessageBox.Show($"You need to pay exactly {total - existingTotalPaid} to complete this job.");
                 return;
@@ -564,7 +559,7 @@ namespace EShift_Business.Forms
 
             string method = txtPaymentMethod.Text;
             DateTime paidDate = dtpPaidDate.Value;
-            string status = "completed"; // or "pending"
+            string status = "completed"; 
 
             bool success = _paymentService.InsertPayment(
                 paidAmount,
@@ -624,7 +619,7 @@ namespace EShift_Business.Forms
 
         private void btnLogout_Click(object sender, EventArgs e)
         {
-            var loginForm = new LoginForm(); // Replace with your login form class name
+            var loginForm = new LoginForm(); 
             loginForm.Show();
             this.Close();
         }
@@ -664,18 +659,23 @@ namespace EShift_Business.Forms
         {
             if (tabControlCustomer.SelectedTab == tbJobDetails)
             {
-                LoadCustomerInfo();  // Reload name and ID
+                LoadCustomerInfo();  
                 LoadCustomerGreeting();
             }
 
             if (tabControlCustomer.SelectedTab == tbProfile)
             {
-                LoadCustomerProfile(); // if you want to refresh on profile tab too
+                LoadCustomerProfile(); 
                 LoadCustomerGreeting();
             }
         }
 
         private void pbLogo_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCustomerName_TextChanged(object sender, EventArgs e)
         {
 
         }

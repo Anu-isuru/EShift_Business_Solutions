@@ -15,9 +15,9 @@ namespace EShift_Business.Models
         public string Email { get; set; }
         public string LicenseNumber { get; set; }
         public string AvailabilityStatus { get; set; }
-        public int UserId { get; set; } // FK from `user` table
+        public int UserId { get; set; } 
         public DateTime CreatedDate { get; set; }
 
-        public string Role { get; set; } // ✅ Add this line
+        public string Role { get; set; } 
     }
 }

@@ -33,7 +33,7 @@ namespace EShift_Business.Forms
         public Admin_Dashboard()
         {
             InitializeComponent();
-            _jobService = new JobService(new JobRepository());// or inject through constructor
+            _jobService = new JobService(new JobRepository());
             _lorryService = new LorryService(new LorryRepository());
             _paymentService = new PaymentService(new PaymentRepository());
             _userService = new UserService(new UserRepository());
@@ -98,7 +98,7 @@ namespace EShift_Business.Forms
             chrtJobStatus.Series.Clear();
             Series series =
                 new Series("Job Status Distribution");
-            series.ChartType = SeriesChartType.Pie; // You can use Column or Doughnut too
+            series.ChartType = SeriesChartType.Pie; 
 
             foreach (var entry in statusCounts)
             {
@@ -107,7 +107,7 @@ namespace EShift_Business.Forms
 
             chrtJobStatus.Series.Add(series);
         }
-        //private void btnSAdd_Click(object sender, EventArgs e)
+       
 
         private void LoadStaffData()
         {
@@ -135,8 +135,8 @@ namespace EShift_Business.Forms
                    staff.LastName,
                    staff.ContactNo,
                    staff.Email,
-                   staff.Role,                  // Make sure this is really Role
-                   staff.LicenseNumber,        // ✅ Now put license number here
+                   staff.Role,                  
+                   staff.LicenseNumber,        
                    staff.CreatedDate.ToShortDateString()
                );
             }
@@ -148,7 +148,7 @@ namespace EShift_Business.Forms
             User user = new User
             {
                 Email = txtSEmail.Text,
-                Password = txtSPassword.Text,  // Optionally hash this
+                Password = txtSPassword.Text,  
                 Role = cmbRole.SelectedItem.ToString(),
                 IsActive = true
             };
@@ -243,12 +243,12 @@ namespace EShift_Business.Forms
         public void GoToAssignmentTab(int jobId)
         {
             _selectedJobId = jobId;
-           // _selectedCustomerId = customerId;
+        
 
             tabAdminDashboard.SelectedTab = tabAssignment;
 
             txtAJobId.Text = jobId.ToString();
-           // txtACustomerId.Text = customerId.ToString();
+          
 
             LoadAvailableDrivers();
             LoadAvailableAssistants();
@@ -258,7 +258,7 @@ namespace EShift_Business.Forms
         private void btnJMAssignDriver_Click(object sender, EventArgs e)
         {
             int jobId = Convert.ToInt32(dgvJobDetails.CurrentRow.Cells["JobId"].Value);
-            //int customerId = Convert.ToInt32(dgvJobDetails.CurrentRow.Cells["CustomerId"].Value);
+            
 
             GoToAssignmentTab(jobId);
         }
@@ -275,6 +275,11 @@ namespace EShift_Business.Forms
         private void LoadAvailableLorries()
         {
             dgvLorry.DataSource = _lorryService.GetAvailableLorriestoAssign();
+        }
+
+        private void btnADLogout_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

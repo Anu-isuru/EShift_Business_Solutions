@@ -184,6 +184,7 @@
             this.txtPW2.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPW2.Location = new System.Drawing.Point(223, 376);
             this.txtPW2.Name = "txtPW2";
+            this.txtPW2.PasswordChar = '*';
             this.txtPW2.Size = new System.Drawing.Size(289, 28);
             this.txtPW2.TabIndex = 27;
             // 
@@ -214,6 +215,7 @@
             this.txtPW1.Font = new System.Drawing.Font("Roboto", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPW1.Location = new System.Drawing.Point(223, 312);
             this.txtPW1.Name = "txtPW1";
+            this.txtPW1.PasswordChar = '*';
             this.txtPW1.Size = new System.Drawing.Size(289, 28);
             this.txtPW1.TabIndex = 22;
             // 

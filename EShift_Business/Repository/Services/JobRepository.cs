@@ -41,7 +41,7 @@ namespace EShift_Business.Repository.Services
             (fk_pickup_location_id, fk_dropoff_location_id, fk_user_id, pickup_date, dropoff_date, status) 
             VALUES 
             (@pickup, @dropoff, @user, @pickupDate, @dropoffDate, @status); 
-            SELECT LAST_INSERT_ID();";  // ✅ This returns the inserted job_id
+            SELECT LAST_INSERT_ID();";  
 
                 using (var cmd = new MySqlCommand(query, conn))
                 {
@@ -52,7 +52,7 @@ namespace EShift_Business.Repository.Services
                     cmd.Parameters.AddWithValue("@dropoffDate", job.DropoffDate);
                     cmd.Parameters.AddWithValue("@status", job.Status ?? "pending");
 
-                    int insertedJobId = Convert.ToInt32(cmd.ExecuteScalar());  // ✅ Now it works!
+                    int insertedJobId = Convert.ToInt32(cmd.ExecuteScalar());  
                     return insertedJobId;
                 }
             }
@@ -122,8 +122,8 @@ namespace EShift_Business.Repository.Services
                             jobList.Add(new Job
                             {
                                 JobId = Convert.ToInt32(reader["job_id"]),
-                                PickupLocationId = Convert.ToInt32(reader["fk_pickup_location_id"]),  // ✅ Added
-                                DropoffLocationId = Convert.ToInt32(reader["fk_dropoff_location_id"]), // ✅ Added
+                                PickupLocationId = Convert.ToInt32(reader["fk_pickup_location_id"]),  
+                                DropoffLocationId = Convert.ToInt32(reader["fk_dropoff_location_id"]), 
                                 PickupDate = Convert.ToDateTime(reader["pickup_date"]),
                                 DropoffDate = Convert.ToDateTime(reader["dropoff_date"]),
                                 Status = reader["status"].ToString(),
@@ -174,7 +174,6 @@ namespace EShift_Business.Repository.Services
                                 DropoffDate = Convert.ToDateTime(reader["dropoff_date"]),
                                 Status = reader["status"].ToString(),
 
-                                // Optional: Fill pickup/dropoff details
                                 PickupAddress = reader["pickup_address"].ToString(),
                                 PickupCity = reader["pickup_city"].ToString(),
                                 PickupProvince = reader["pickup_province"].ToString(),

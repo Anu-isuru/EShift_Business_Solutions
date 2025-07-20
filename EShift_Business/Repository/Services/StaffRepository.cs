@@ -110,8 +110,8 @@ namespace EShift_Business.Repository.Services
                         drivers.Add(new Staff
                         {
                             StaffId = reader.GetInt32("staff_id"),
-                            FirstName = reader.GetString("f_name"),      // Corrected
-                            LastName = reader.GetString("l_name"),       // Corrected
+                            FirstName = reader.GetString("f_name"),      
+                            LastName = reader.GetString("l_name"),       
                             ContactNo = reader.GetString("contact_no"),
                             Email = reader.GetString("email"),
                             AvailabilityStatus = reader.GetString("availability_status"),
@@ -149,8 +149,8 @@ namespace EShift_Business.Repository.Services
                         assistant.Add(new Staff
                         {
                             StaffId = reader.GetInt32("staff_id"),
-                            FirstName = reader.GetString("f_name"),      // Corrected
-                            LastName = reader.GetString("l_name"),       // Corrected
+                            FirstName = reader.GetString("f_name"),      
+                            LastName = reader.GetString("l_name"),       
                             ContactNo = reader.GetString("contact_no"),
                             Email = reader.GetString("email"),
                             AvailabilityStatus = reader.GetString("availability_status"),

@@ -71,7 +71,7 @@ namespace EShift_Business.Repository.Services
             SELECT p.payment_id, p.paid_amount, p.paid_date, p.payment_method, p.status, p.fk_job_id
             FROM payment p
             JOIN job j ON p.fk_job_id = j.job_id
-            WHERE j.fk_user_id = @userId";  // adjust to your schema
+            WHERE j.fk_user_id = @userId";  
 
                 using (var cmd = new MySqlCommand(query, conn))
                 {
