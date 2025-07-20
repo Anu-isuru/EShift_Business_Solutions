@@ -1,0 +1,10 @@
+# Ignore build and VS files
+bin/
+obj/
+.vs/
+*.user
+*.suo
+*.log
+*.tmp
+*.cache
+*.db
