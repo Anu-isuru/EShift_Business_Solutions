@@ -11,5 +11,7 @@ namespace EShift_Business.Business.Interface
     {
         int GetAvailableLorries();
         List<Lorry> GetAvailableLorriestoAssign();
+        bool UpdateLorryAvailability(int lorryId, string status);
+
     }
 }

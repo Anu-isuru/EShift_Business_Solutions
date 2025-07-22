@@ -16,5 +16,6 @@ namespace EShift_Business.Business.Interface
         Staff GetStaffById(int staffId);
         List<Staff> GetAvailableDrivers();
         List<Staff> GetAvailableAssistants();
+        bool UpdateStaffAvailability(int staffId, string newStatus);
     }
 }

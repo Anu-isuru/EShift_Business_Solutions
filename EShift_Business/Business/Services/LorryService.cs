@@ -24,5 +24,10 @@ namespace EShift_Business.Business.Services
         {
             return _lorryRepository.GetAvailableLorriestoAssign();
         }
+        public bool UpdateLorryAvailability(int lorryId, string status)
+        {
+            return _lorryRepository.UpdateAvailability(lorryId, status);
+        }
+
     }
 }

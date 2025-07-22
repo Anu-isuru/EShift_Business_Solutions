@@ -20,6 +20,10 @@ namespace EShift_Business.Business.Interface
         int GetCompletedJobs();
         Dictionary<string, int> GetJobCountByStatus();
         List<Job> GetPendingJobs();
+        bool UpdateJobStatus(int jobId, string newStatus);
+        List<JobReportDTO> GetAllJobDetailsWithCustomer();
+        List<JobReportDTO> GetJobsByStatus(string status);
+
 
 
 

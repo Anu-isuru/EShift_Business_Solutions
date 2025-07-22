@@ -51,5 +51,20 @@ namespace EShift_Business.Repository.Services
             }
             return list;
         }
+        public bool UpdateAvailability(int lorryId, string status)
+        {
+            using (var conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "UPDATE lorry SET availability_state = @status WHERE lorry_id = @id";
+                using (var cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@status", status);
+                    cmd.Parameters.AddWithValue("@id", lorryId);
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+            }
+        }
+
     }
 }

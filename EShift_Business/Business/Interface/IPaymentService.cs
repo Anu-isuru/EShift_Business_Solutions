@@ -15,6 +15,7 @@ namespace EShift_Business.Business.Interface
         int GetPendingPayments();
         Dictionary<string, float> GetMonthlyRevenue();
         Payment GetPaymentByJobId(int jobId);
+        Dictionary<string, float> GetYearlyRevenue();
 
 
     }

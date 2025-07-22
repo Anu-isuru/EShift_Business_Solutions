@@ -54,6 +54,9 @@ namespace EShift_Business.Business.Services
         {
             return _staffRepository.GetAvailableAssistants();
         }
-
+        public bool UpdateStaffAvailability(int staffId, string newStatus)
+        {
+            return _staffRepository.UpdateAvailability(staffId, newStatus);
+        }
     }
 }

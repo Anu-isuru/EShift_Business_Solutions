@@ -171,7 +171,37 @@ namespace EShift_Business.Repository.Services
             }
             return payment;
         }
+        public Dictionary<string, float> GetYearlyRevenue()
+        {
+            var revenueByYear = new Dictionary<string, float>();
 
+            using (var conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = @"
+            SELECT 
+                DATE_FORMAT(paid_date, '%Y') AS year,
+                SUM(paid_amount) AS total
+            FROM payment
+            WHERE status = 'completed'
+            GROUP BY year
+            ORDER BY year;
+        ";
+
+                using (var cmd = new MySqlCommand(query, conn))
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        string year = reader.GetString("year");
+                        float total = reader.GetFloat("total");
+                        revenueByYear.Add(year, total);
+                    }
+                }
+            }
+
+            return revenueByYear;
+        }
 
 
     }

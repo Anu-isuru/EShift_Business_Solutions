@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Admin_Dashboard));
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title4 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.lblADGreeting = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnADLogout = new System.Windows.Forms.Button();
@@ -146,6 +146,22 @@
             this.txtADriverId = new System.Windows.Forms.TextBox();
             this.label35 = new System.Windows.Forms.Label();
             this.tabReports = new System.Windows.Forms.TabPage();
+            this.groupBox12 = new System.Windows.Forms.GroupBox();
+            this.btnReportPendingJobs = new System.Windows.Forms.Button();
+            this.btnReportCompletedJobs = new System.Windows.Forms.Button();
+            this.btnReportAssignedJobs = new System.Windows.Forms.Button();
+            this.txtAssignedJobs = new System.Windows.Forms.TextBox();
+            this.txtCompletedJobs = new System.Windows.Forms.TextBox();
+            this.txtPendingJobs = new System.Windows.Forms.TextBox();
+            this.txtTotalJobs = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnReportTotalJobs = new System.Windows.Forms.Button();
+            this.groupBox11 = new System.Windows.Forms.GroupBox();
+            this.btnRevenueR = new System.Windows.Forms.Button();
+            this.cmbRevenueType = new System.Windows.Forms.ComboBox();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.headerPanel = new System.Windows.Forms.Panel();
             this.label43 = new System.Windows.Forms.Label();
@@ -181,6 +197,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvAssistant)).BeginInit();
             this.groupBox8.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDrivers)).BeginInit();
+            this.tabReports.SuspendLayout();
+            this.groupBox12.SuspendLayout();
+            this.groupBox11.SuspendLayout();
             this.headerPanel.SuspendLayout();
             this.pnlContent.SuspendLayout();
             this.SuspendLayout();
@@ -320,17 +339,17 @@
             // chrtJobStatus
             // 
             this.chrtJobStatus.BackColor = System.Drawing.Color.Lavender;
-            chartArea1.Name = "ChartArea1";
-            this.chrtJobStatus.ChartAreas.Add(chartArea1);
-            legend1.Name = "Legend1";
-            this.chrtJobStatus.Legends.Add(legend1);
+            chartArea7.Name = "ChartArea1";
+            this.chrtJobStatus.ChartAreas.Add(chartArea7);
+            legend7.Name = "Legend1";
+            this.chrtJobStatus.Legends.Add(legend7);
             this.chrtJobStatus.Location = new System.Drawing.Point(621, 230);
             this.chrtJobStatus.Name = "chrtJobStatus";
             this.chrtJobStatus.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.EarthTones;
-            series1.ChartArea = "ChartArea1";
-            series1.Legend = "Legend1";
-            series1.Name = "Series1";
-            this.chrtJobStatus.Series.Add(series1);
+            series7.ChartArea = "ChartArea1";
+            series7.Legend = "Legend1";
+            series7.Name = "Series1";
+            this.chrtJobStatus.Series.Add(series7);
             this.chrtJobStatus.Size = new System.Drawing.Size(500, 400);
             this.chrtJobStatus.TabIndex = 65;
             this.chrtJobStatus.Text = "chart1";
@@ -338,22 +357,22 @@
             // chrtRevenue
             // 
             this.chrtRevenue.BackColor = System.Drawing.Color.Lavender;
-            chartArea2.Name = "ChartArea1";
-            this.chrtRevenue.ChartAreas.Add(chartArea2);
-            legend2.Name = "Legend1";
-            this.chrtRevenue.Legends.Add(legend2);
+            chartArea8.Name = "ChartArea1";
+            this.chrtRevenue.ChartAreas.Add(chartArea8);
+            legend8.Name = "Legend1";
+            this.chrtRevenue.Legends.Add(legend8);
             this.chrtRevenue.Location = new System.Drawing.Point(60, 230);
             this.chrtRevenue.Name = "chrtRevenue";
             this.chrtRevenue.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
-            series2.ChartArea = "ChartArea1";
-            series2.Legend = "Legend1";
-            series2.Name = "Series1";
-            this.chrtRevenue.Series.Add(series2);
+            series8.ChartArea = "ChartArea1";
+            series8.Legend = "Legend1";
+            series8.Name = "Series1";
+            this.chrtRevenue.Series.Add(series8);
             this.chrtRevenue.Size = new System.Drawing.Size(500, 400);
             this.chrtRevenue.TabIndex = 64;
             this.chrtRevenue.Text = "Revenue Chart";
-            title1.Name = "Title1";
-            this.chrtRevenue.Titles.Add(title1);
+            title4.Name = "Title1";
+            this.chrtRevenue.Titles.Add(title4);
             // 
             // plCompleteJobs
             // 
@@ -1161,6 +1180,7 @@
             this.btnALorry.TabIndex = 7;
             this.btnALorry.Text = "Assign Lorry";
             this.btnALorry.UseVisualStyleBackColor = true;
+            this.btnALorry.Click += new System.EventHandler(this.btnALorry_Click);
             // 
             // dgvLorry
             // 
@@ -1171,6 +1191,7 @@
             this.dgvLorry.RowTemplate.Height = 24;
             this.dgvLorry.Size = new System.Drawing.Size(571, 163);
             this.dgvLorry.TabIndex = 6;
+            this.dgvLorry.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLorry_CellClick);
             // 
             // txtAPlateNo
             // 
@@ -1232,6 +1253,7 @@
             this.btnAAssistant.TabIndex = 7;
             this.btnAAssistant.Text = "Assign Assistant";
             this.btnAAssistant.UseVisualStyleBackColor = true;
+            this.btnAAssistant.Click += new System.EventHandler(this.btnAAssistant_Click);
             // 
             // dgvAssistant
             // 
@@ -1242,6 +1264,7 @@
             this.dgvAssistant.RowTemplate.Height = 24;
             this.dgvAssistant.Size = new System.Drawing.Size(571, 163);
             this.dgvAssistant.TabIndex = 6;
+            this.dgvAssistant.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAssistant_CellClick);
             // 
             // txtAAssistantName
             // 
@@ -1313,6 +1336,7 @@
             this.btnADriver.TabIndex = 7;
             this.btnADriver.Text = "Assign Driver";
             this.btnADriver.UseVisualStyleBackColor = true;
+            this.btnADriver.Click += new System.EventHandler(this.btnADriver_Click);
             // 
             // dgvDrivers
             // 
@@ -1323,6 +1347,7 @@
             this.dgvDrivers.RowTemplate.Height = 24;
             this.dgvDrivers.Size = new System.Drawing.Size(571, 163);
             this.dgvDrivers.TabIndex = 6;
+            this.dgvDrivers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDrivers_CellClick);
             // 
             // txtADriverName
             // 
@@ -1362,12 +1387,191 @@
             // 
             // tabReports
             // 
+            this.tabReports.Controls.Add(this.groupBox12);
+            this.tabReports.Controls.Add(this.groupBox11);
             this.tabReports.Location = new System.Drawing.Point(4, 40);
             this.tabReports.Name = "tabReports";
             this.tabReports.Size = new System.Drawing.Size(1171, 706);
             this.tabReports.TabIndex = 4;
             this.tabReports.Text = "Reports";
             this.tabReports.UseVisualStyleBackColor = true;
+            // 
+            // groupBox12
+            // 
+            this.groupBox12.Controls.Add(this.btnReportPendingJobs);
+            this.groupBox12.Controls.Add(this.btnReportCompletedJobs);
+            this.groupBox12.Controls.Add(this.btnReportAssignedJobs);
+            this.groupBox12.Controls.Add(this.txtAssignedJobs);
+            this.groupBox12.Controls.Add(this.txtCompletedJobs);
+            this.groupBox12.Controls.Add(this.txtPendingJobs);
+            this.groupBox12.Controls.Add(this.txtTotalJobs);
+            this.groupBox12.Controls.Add(this.label7);
+            this.groupBox12.Controls.Add(this.label6);
+            this.groupBox12.Controls.Add(this.label5);
+            this.groupBox12.Controls.Add(this.label3);
+            this.groupBox12.Controls.Add(this.btnReportTotalJobs);
+            this.groupBox12.Location = new System.Drawing.Point(9, 208);
+            this.groupBox12.Name = "groupBox12";
+            this.groupBox12.Size = new System.Drawing.Size(601, 218);
+            this.groupBox12.TabIndex = 5;
+            this.groupBox12.TabStop = false;
+            this.groupBox12.Text = "Jobs";
+            this.groupBox12.UseCompatibleTextRendering = true;
+            // 
+            // btnReportPendingJobs
+            // 
+            this.btnReportPendingJobs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportPendingJobs.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportPendingJobs.Location = new System.Drawing.Point(375, 77);
+            this.btnReportPendingJobs.Name = "btnReportPendingJobs";
+            this.btnReportPendingJobs.Size = new System.Drawing.Size(176, 28);
+            this.btnReportPendingJobs.TabIndex = 17;
+            this.btnReportPendingJobs.Text = "Generate Report";
+            this.btnReportPendingJobs.UseVisualStyleBackColor = true;
+            this.btnReportPendingJobs.Click += new System.EventHandler(this.btnReportPendingJobs_Click_1);
+            // 
+            // btnReportCompletedJobs
+            // 
+            this.btnReportCompletedJobs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportCompletedJobs.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportCompletedJobs.Location = new System.Drawing.Point(375, 118);
+            this.btnReportCompletedJobs.Name = "btnReportCompletedJobs";
+            this.btnReportCompletedJobs.Size = new System.Drawing.Size(176, 28);
+            this.btnReportCompletedJobs.TabIndex = 16;
+            this.btnReportCompletedJobs.Text = "Generate Report";
+            this.btnReportCompletedJobs.UseVisualStyleBackColor = true;
+            this.btnReportCompletedJobs.Click += new System.EventHandler(this.btnReportCompletedJobs_Click_1);
+            // 
+            // btnReportAssignedJobs
+            // 
+            this.btnReportAssignedJobs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportAssignedJobs.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportAssignedJobs.Location = new System.Drawing.Point(375, 159);
+            this.btnReportAssignedJobs.Name = "btnReportAssignedJobs";
+            this.btnReportAssignedJobs.Size = new System.Drawing.Size(176, 28);
+            this.btnReportAssignedJobs.TabIndex = 15;
+            this.btnReportAssignedJobs.Text = "Generate Report";
+            this.btnReportAssignedJobs.UseVisualStyleBackColor = true;
+            this.btnReportAssignedJobs.Click += new System.EventHandler(this.btnReportAssignedJobs_Click_1);
+            // 
+            // txtAssignedJobs
+            // 
+            this.txtAssignedJobs.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtAssignedJobs.Location = new System.Drawing.Point(201, 159);
+            this.txtAssignedJobs.Name = "txtAssignedJobs";
+            this.txtAssignedJobs.Size = new System.Drawing.Size(134, 28);
+            this.txtAssignedJobs.TabIndex = 14;
+            // 
+            // txtCompletedJobs
+            // 
+            this.txtCompletedJobs.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCompletedJobs.Location = new System.Drawing.Point(201, 118);
+            this.txtCompletedJobs.Name = "txtCompletedJobs";
+            this.txtCompletedJobs.Size = new System.Drawing.Size(134, 28);
+            this.txtCompletedJobs.TabIndex = 13;
+            // 
+            // txtPendingJobs
+            // 
+            this.txtPendingJobs.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPendingJobs.Location = new System.Drawing.Point(201, 77);
+            this.txtPendingJobs.Name = "txtPendingJobs";
+            this.txtPendingJobs.Size = new System.Drawing.Size(134, 28);
+            this.txtPendingJobs.TabIndex = 12;
+            // 
+            // txtTotalJobs
+            // 
+            this.txtTotalJobs.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTotalJobs.Location = new System.Drawing.Point(201, 36);
+            this.txtTotalJobs.Name = "txtTotalJobs";
+            this.txtTotalJobs.Size = new System.Drawing.Size(134, 28);
+            this.txtTotalJobs.TabIndex = 11;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.Location = new System.Drawing.Point(14, 84);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(113, 20);
+            this.label7.TabIndex = 10;
+            this.label7.Text = "Pending Jobs";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(14, 124);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(135, 20);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "Completed Jobs";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(14, 164);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(122, 20);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "Assigned Jobs";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(14, 44);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(89, 20);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Total Jobs";
+            // 
+            // btnReportTotalJobs
+            // 
+            this.btnReportTotalJobs.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportTotalJobs.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReportTotalJobs.Location = new System.Drawing.Point(375, 36);
+            this.btnReportTotalJobs.Name = "btnReportTotalJobs";
+            this.btnReportTotalJobs.Size = new System.Drawing.Size(176, 28);
+            this.btnReportTotalJobs.TabIndex = 4;
+            this.btnReportTotalJobs.Text = "Generate Report";
+            this.btnReportTotalJobs.UseVisualStyleBackColor = true;
+            this.btnReportTotalJobs.Click += new System.EventHandler(this.btnReportTotalJobs_Click);
+            // 
+            // groupBox11
+            // 
+            this.groupBox11.Controls.Add(this.btnRevenueR);
+            this.groupBox11.Controls.Add(this.cmbRevenueType);
+            this.groupBox11.Location = new System.Drawing.Point(11, 41);
+            this.groupBox11.Name = "groupBox11";
+            this.groupBox11.Size = new System.Drawing.Size(601, 150);
+            this.groupBox11.TabIndex = 0;
+            this.groupBox11.TabStop = false;
+            this.groupBox11.Text = "Revenue Report";
+            // 
+            // btnRevenueR
+            // 
+            this.btnRevenueR.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRevenueR.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRevenueR.Location = new System.Drawing.Point(375, 64);
+            this.btnRevenueR.Name = "btnRevenueR";
+            this.btnRevenueR.Size = new System.Drawing.Size(176, 28);
+            this.btnRevenueR.TabIndex = 4;
+            this.btnRevenueR.Text = "Generate Report";
+            this.btnRevenueR.UseVisualStyleBackColor = true;
+            this.btnRevenueR.Click += new System.EventHandler(this.btnRevenueR_Click);
+            // 
+            // cmbRevenueType
+            // 
+            this.cmbRevenueType.Font = new System.Drawing.Font("Roboto", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbRevenueType.FormattingEnabled = true;
+            this.cmbRevenueType.Items.AddRange(new object[] {
+            "Monthly",
+            "Yearly"});
+            this.cmbRevenueType.Location = new System.Drawing.Point(14, 68);
+            this.cmbRevenueType.Name = "cmbRevenueType";
+            this.cmbRevenueType.Size = new System.Drawing.Size(210, 28);
+            this.cmbRevenueType.TabIndex = 2;
             // 
             // headerPanel
             // 
@@ -1468,6 +1672,10 @@
             this.groupBox8.ResumeLayout(false);
             this.groupBox8.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDrivers)).EndInit();
+            this.tabReports.ResumeLayout(false);
+            this.groupBox12.ResumeLayout(false);
+            this.groupBox12.PerformLayout();
+            this.groupBox11.ResumeLayout(false);
             this.headerPanel.ResumeLayout(false);
             this.headerPanel.PerformLayout();
             this.pnlContent.ResumeLayout(false);
@@ -1592,5 +1800,21 @@
         private System.Windows.Forms.ComboBox cmbRole;
         private System.Windows.Forms.DateTimePicker dtpJMPUDate;
         private System.Windows.Forms.DateTimePicker dtpJMDODate;
+        private System.Windows.Forms.GroupBox groupBox11;
+        private System.Windows.Forms.GroupBox groupBox12;
+        private System.Windows.Forms.Button btnReportTotalJobs;
+        private System.Windows.Forms.Button btnRevenueR;
+        private System.Windows.Forms.ComboBox cmbRevenueType;
+        private System.Windows.Forms.Button btnReportPendingJobs;
+        private System.Windows.Forms.Button btnReportCompletedJobs;
+        private System.Windows.Forms.Button btnReportAssignedJobs;
+        private System.Windows.Forms.TextBox txtAssignedJobs;
+        private System.Windows.Forms.TextBox txtCompletedJobs;
+        private System.Windows.Forms.TextBox txtPendingJobs;
+        private System.Windows.Forms.TextBox txtTotalJobs;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label3;
     }
 }

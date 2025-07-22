@@ -13,6 +13,8 @@ namespace EShift_Business.Repository.Interface
         List<Staff> GetAllStaff();
         List<Staff> GetAvailableDrivers();
         List<Staff> GetAvailableAssistants();
+        bool UpdateAvailability(int staffId, string status);
+
 
     }
 }

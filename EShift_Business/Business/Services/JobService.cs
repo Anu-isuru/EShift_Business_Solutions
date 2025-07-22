@@ -65,6 +65,18 @@ namespace EShift_Business.Business.Services
         {
             return _jobRepository.GetPendingJobs();
         }
+        public bool UpdateJobStatus(int jobId, string newStatus)
+        {
+            return _jobRepository.UpdateJobStatus(jobId, newStatus);
+        }
+        public List<JobReportDTO> GetAllJobDetailsWithCustomer() 
+        {
+            return _jobRepository.GetAllJobDetailsWithCustomer();
+        }
+        public List<JobReportDTO> GetJobsByStatus(string status)
+        {
+            return _jobRepository.GetJobsByStatus(status);
+        }
 
 
     }

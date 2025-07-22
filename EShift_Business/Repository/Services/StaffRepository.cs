@@ -161,5 +161,20 @@ namespace EShift_Business.Repository.Services
             }
             return assistant;
         }
+        public bool UpdateAvailability(int staffId, string status)
+        {
+            using (var conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "UPDATE staff_details SET availability_status = @status WHERE staff_id = @id";
+                using (var cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@status", status);
+                    cmd.Parameters.AddWithValue("@id", staffId);
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+            }
+        }
+
     }
 }

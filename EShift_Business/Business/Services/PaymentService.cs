@@ -47,7 +47,10 @@ namespace EShift_Business.Business.Services
         {
             return _paymentRepository.GetPaymentByJobId(jobId);
         }
-
+        public Dictionary<string, float> GetYearlyRevenue()
+        {
+            return _paymentRepository.GetYearlyRevenue();
+        }
 
 
 

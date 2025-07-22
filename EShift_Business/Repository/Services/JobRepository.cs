@@ -352,7 +352,112 @@ namespace EShift_Business.Repository.Services
             }
             return jobs;
         }
+        public bool UpdateJobStatus(int jobId, string newStatus)
+        {
+            using (var conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = "UPDATE job SET status = @status WHERE job_id = @jobId";
+                using (var cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@status", newStatus);
+                    cmd.Parameters.AddWithValue("@jobId", jobId);
+                    return cmd.ExecuteNonQuery() > 0;
+                }
+            }
+        }
+        public List<JobReportDTO> GetAllJobDetailsWithCustomer()
+        {
+            List<JobReportDTO> jobs = new List<JobReportDTO>();
 
+            using (var conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = @"
+SELECT 
+    j.job_id,
+    CONCAT(c.f_name, ' ', c.l_name) AS customer_name,
+    CONCAT(p.address, ', ', p.city, ', ', p.province) AS pickup_address,
+    CONCAT(d.address, ', ', d.city, ', ', d.province) AS dropoff_address,
+    j.pickup_date,
+    j.dropoff_date
+FROM job j
+JOIN user u ON j.fk_user_id = u.user_id
+JOIN customer_details c ON u.user_id = c.fk_user_id
+JOIN location p ON j.fk_pickup_location_id = p.location_id
+JOIN location d ON j.fk_dropoff_location_id = d.location_id
+ORDER BY j.job_id;
+";
+
+                using (var cmd = new MySqlCommand(query, conn))
+                using (var reader = cmd.ExecuteReader())
+                {
+                    while (reader.Read())
+                    {
+                        jobs.Add(new JobReportDTO
+                        {
+                            JobId = reader.GetInt32("job_id"),
+                            CustomerName = reader.GetString("customer_name"),
+                            PickupAddress = reader.GetString("pickup_address"),
+                            DropoffAddress = reader.GetString("dropoff_address"),
+                            PickupDate = reader.GetDateTime("pickup_date"),
+                            DropoffDate = reader.GetDateTime("dropoff_date")
+                        });
+                    }
+                }
+            }
+
+            return jobs;
+        }
+
+        public List<JobReportDTO> GetJobsByStatus(string status)
+        {
+            List<JobReportDTO> jobs = new List<JobReportDTO>();
+
+            using (var conn = new MySqlConnection(connectionString))
+            {
+                conn.Open();
+                string query = @"
+SELECT 
+    j.job_id,
+    CONCAT(c.f_name, ' ', c.l_name) AS customer_name,
+    CONCAT(p.address, ', ', p.city, ', ', p.province) AS pickup_address,
+    CONCAT(d.address, ', ', d.city, ', ', d.province) AS dropoff_address,
+    j.pickup_date,
+    j.dropoff_date
+FROM job j
+JOIN user u ON j.fk_user_id = u.user_id
+JOIN customer_details c ON u.user_id = c.fk_user_id
+JOIN location p ON j.fk_pickup_location_id = p.location_id
+JOIN location d ON j.fk_dropoff_location_id = d.location_id
+WHERE j.status = @status
+ORDER BY j.job_id;
+";
+
+                using (var cmd = new MySqlCommand(query, conn))
+                {
+                    cmd.Parameters.AddWithValue("@status", status);
+
+                    using (var reader = cmd.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            jobs.Add(new JobReportDTO
+                            {
+                                JobId = reader.GetInt32("job_id"),
+                                CustomerName = reader.GetString("customer_name"),
+                                PickupAddress = reader.GetString("pickup_address"),
+                                DropoffAddress = reader.GetString("dropoff_address"),
+                                PickupDate = reader.GetDateTime("pickup_date"),
+                                DropoffDate = reader.GetDateTime("dropoff_date")
+                            });
+                        }
+                    }
+                }
+            }
+
+            return jobs;
+        }
 
 
     }
